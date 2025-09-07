@@ -7,11 +7,60 @@ body {
 }
 
 header {
-    background-color: #003366;
+    background-color: #3399ff; /* celeste vivo para contraste */
     color: white;
     text-align: center;
     padding: 20px;
 }
+/* Banda superior completa */
+.top-bar {
+    background-color: #3399ff; /* celeste */
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Header dentro de la banda superior */
+.top-bar header {
+    padding: 20px 0;
+}
+
+/* Imagen del escudo */
+header .escudo {
+    width: 100px;
+    height: auto;
+}
+
+/* Nombre del club */
+header h1 {
+    margin: 10px 0 0 0;
+    font-size: 2.5em;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Navegación */
+nav {
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* El resto de la web */
+main {
+    background-color: white;
+    padding: 20px;
+}
+
 
 header .escudo {
     width: 100px;
