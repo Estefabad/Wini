@@ -1,135 +1,141 @@
-/* styles.css */
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Anton&display=swap');
+
+/* BODY */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    margin:0;
+    font-family: 'Oswald', sans-serif;
+    color:#333;
+    background: linear-gradient(to bottom, #e1f5fe 0%, #ffffff 40%), url('img/estadio_winifreda.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+body::before {
+    content:'';
+    position:fixed;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(1.5px);
+    z-index:-1;
 }
 
-header {
-    background-color: #3399ff; /* celeste vivo para contraste */
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-/* Banda superior completa */
+/* BANDA SUPERIOR */
 .top-bar {
-    background-color: #3399ff; /* celeste */
+    background: linear-gradient(90deg, rgba(51,153,255,0.85), rgba(102,204,255,0.85));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: box-shadow 0.3s, border-bottom-color 0.3s;
+}
+.top-bar.scrolled {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border-bottom-color: rgba(255,255,255,0.5);
+}
+
+/* ESCUDO + NOMBRE */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.header-container img {
+    height: 60px;
+    width: auto;
+}
+.header-container h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.8rem;
     color: white;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-/* Header dentro de la banda superior */
-.top-bar header {
-    padding: 20px 0;
-}
-
-/* Imagen del escudo */
-header .escudo {
-    width: 100px;
-    height: auto;
-}
-
-/* Nombre del club */
-header h1 {
-    margin: 10px 0 0 0;
-    font-size: 2.5em;
-    font-family: 'Oswald', sans-serif;
-}
-
-/* Navegación */
-nav {
-    padding: 10px 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-family: 'Oswald', sans-serif;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* El resto de la web */
-main {
-    background-color: white;
-    padding: 20px;
-}
-
-
-header .escudo {
-    width: 100px;
-    height: auto;
-}
-
-h1 {
     margin: 0;
-    font-size: 2.5em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
-section {
-    padding: 20px;
-    margin: 10px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    color: #003366;
-}
-
-ul {
-    list-style-type: none;
+/* NAVEGACIÓN */
+nav ul {
+    display: flex;
+    gap: 20px;
+    margin: 0;
     padding: 0;
 }
-
-ul li {
-    margin: 10px 0;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #003366;
+nav ul li a {
+    font-family: 'Oswald', sans-serif;
+    color: white;
     font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.2s;
+}
+nav ul li a:hover {
+    color: #ffd700;
+    transform: translateY(-2px);
 }
 
-ul li a:hover {
-    text-decoration: underline;
+/* RESPONSIVO */
+@media(max-width:768px){
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    nav ul li a { margin: 5px 0; }
 }
 
-#publicidad {
-    text-align: center;
-    margin: 20px 0;
+/* SECCIONES */
+section h2 {
+    font-size:2rem;
+    text-align:center;
+    margin-bottom:20px;
+    color:#0077c2;
+    padding-top:20px;
 }
 
-#publicidad .publicidad {
-    width: 80%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 8px;
+/* NOTICIAS */
+.noticias-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:0 20px 20px 20px;
 }
+.noticia {
+    background:#e1f5fe;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+    transition: transform 0.3s;
+}
+.noticia:hover { transform: translateY(-5px);}
+.noticia h3 { margin:10px 0; color:#01579b; font-size:1rem;}
+.noticia p { font-size:0.9rem; color:#555; }
+.noticia a { display:block; margin-top:10px; color:#0288d1; font-weight:bold; text-decoration:none; }
 
-footer {
-  background-color: #f4f4f4;
-  text-align: center;
-  padding: 20px 10px;
-  font-family: 'Oswald', sans-serif;
-  color: #333;
-}
+/* PUBLICIDAD */
+.banner-publicidad { width:100%; text-align:center; margin:20px 0; }
+.banner-publicidad img { width:50%; max-width:400px; height:auto; border-radius:10px; margin:20px auto; display:block; }
 
-footer a {
-  color: #0066cc;
-  text-decoration: none;
-  margin: 0 5px;
-  font-weight: bold;
-}
+/* AGENDA */
+.agenda-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; padding:0 20px 20px 20px; }
+.disciplina { background:#f1f8ff; border-radius:10px; padding:15px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.disciplina:hover { transform: translateY(-5px);}
+.disciplina h3 { color:#0077c2; margin-bottom:10px; }
+.disciplina .escudos { display:flex; justify-content:center; gap:10px; margin:10px 0; }
+.disciplina img { max-width:50px; height:auto; }
 
-footer a:hover {
-  text-decoration: underline;
-}
+/* FOOTER */
+footer { background:#03a9f4; color:white; text-align:center; padding:20px; margin-top:20px; }
+footer a { color:white; text-decoration:none; margin:0 10px; }
