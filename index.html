@@ -1,44 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Club Social y Deportivo Winifreda</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Social y Deportivo Winifreda</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://static.wixstatic.com/media/4e4f43_23b6e0a8eada4a05ac579e0a387bb8c3~mv2.png" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Club Social y Deportivo Winifreda</h1>
+
+<header>
+    <div class="logo-titulo">
+        <img src="img/escudo.png" alt="Escudo Winifreda" class="escudo">
+        <div class="titulo-club">Club Social y Deportivo Winifreda</div>
+    </div>
     <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Deportes</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#deportes">Deportes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="csdwradio.html" target="_blank">Radio</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <main>
-    <!-- Foto publicidad -->
-    <img src="img/publicidad1.jpg" alt="Publicidad" class="publicidad">
-
-    <!-- Escudo del club -->
-    <img src="img/escudo.png" alt="Escudo del club" class="escudo">
+<main>
+    <!-- Publicidad -->
+    <div class="publicidad-banner">
+        <img src="img/publicidad1.jpg" alt="Publicidad discreta">
+    </div>
 
     <!-- Noticias -->
     <section id="noticias">
-      <h2>Últimas Noticias</h2>
-      <p>Aquí va el contenido de noticias del club...</p>
+        <h2>Noticias</h2>
+        <div class="noticias-horizontal">
+            <div class="noticia">
+                <img src="img/noticia1.jpg" alt="Noticia 1">
+                <h3>Título Noticia 1</h3>
+                <p>Subtítulo de la noticia 1</p>
+            </div>
+            <div class="noticia">
+                <img src="img/noticia2.jpg" alt="Noticia 2">
+                <h3>Título Noticia 2</h3>
+                <p>Subtítulo de la noticia 2</p>
+            </div>
+            <!-- agregá más noticias según necesites -->
+        </div>
     </section>
 
     <!-- Agenda Deportiva -->
-    <section id="agenda">
-      <h2>Agenda Deportiva</h2>
-      <p>Aquí va el calendario de actividades...</p>
+    <section id="proximos-partidos">
+        <h2>Agenda Deportiva</h2>
+        <div class="agenda-grid">
+            <div class="disciplina">
+                <h3>Fútbol</h3>
+                <div class="escudos">
+                    <img src="img/escudo.png" alt="Escudo Winifreda">
+                    <img src="img/escudos/otros/independiente de pico.png" alt="Escudo rival">
+                </div>
+                <p>Independiente Pico vs Winifreda - 7 Septiembre 16:00 hs</p>
+            </div>
+            <div class="disciplina">
+                <h3>Vóley Femenino</h3>
+                <div class="escudos">
+                    <img src="img/escudos/voley/sportivo toay.png" alt="Escudo rival">
+                    <img src="img/escudos/voley/escudo voley mar 2024.png" alt="Escudo Winifreda">
+                </div>
+                <p>Sportivo A vs Winifreda - 5 Septiembre 21:30 hs</p>
+            </div>
+            <!-- agregá más disciplinas según necesites -->
+        </div>
     </section>
-  </main>
+</main>
 
-  <footer>
+<footer id="contacto">
     <p>© 2025 Club Social y Deportivo Winifreda</p>
-  </footer>
+</footer>
+
 </body>
 </html>

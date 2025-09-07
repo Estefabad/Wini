@@ -1,60 +1,136 @@
-/* Estilos generales */
+/* Reset y estilos generales */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    color: #333;
+    background: linear-gradient(to bottom, #e1f5fe 0%, #ffffff 40%);
+    background-size: cover;
 }
 
 header {
-  background-color: #004080;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+    background: #03a9f4;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+header .logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+header .titulo-club {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.8rem;
+    color: white;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 main {
-  padding: 20px;
-  text-align: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.publicidad {
-  width: 50%;
-  max-width: 300px;
-  margin: 20px auto;
-  display: block;
+h2 {
+    color: #01579b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.publicidad-banner img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
 }
 
 .escudo {
-  width: 100px;
-  height: auto;
-  margin: 20px auto;
-  display: block;
+    width: 100px;
+    height: auto;
+    display: block;
 }
 
-section {
-  margin: 40px 0;
+.noticias-horizontal {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.noticia {
+    flex: 0 0 220px;
+    background: #e1f5fe;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noticia img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.noticia h3 { margin:5px 0; color:#01579b; text-align:center; }
+.noticia p { font-size:0.9rem; text-align:center; color:#555; margin-bottom:10px; }
+
+.agenda-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.disciplina {
+    background: #f1f8ff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.disciplina .escudos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
 }
 
 footer {
-  background-color: #004080;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
+    background: #03a9f4;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .noticias-horizontal { display: flex; flex-wrap: nowrap; overflow-x: scroll; }
+    .noticia { flex: 0 0 80%; }
 }
