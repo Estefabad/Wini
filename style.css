@@ -1,6 +1,60 @@
-git init
-git add .
-git commit -m "Proyecto con HTML y CSS"
-git branch -M main
-git remote add origin https://github.com/tuusuario/tu-repo.git
-git push -u origin main
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #004080;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.publicidad {
+  width: 50%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+
+.escudo {
+  width: 100px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
+
+section {
+  margin: 40px 0;
+}
+
+footer {
+  background-color: #004080;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
