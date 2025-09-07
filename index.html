@@ -1,58 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Club Social y Deportivo Winifreda</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Social y Deportivo Winifreda</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Anton&display=swap" rel="stylesheet">
+<style>
+/* RESET Y BODY */
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Oswald', sans-serif;
+    color:#333;
+    background: linear-gradient(to bottom, #e1f5fe 0%, #ffffff 40%), url('img/estadio_winifreda.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+body::before {
+    content:'';
+    position:fixed;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(1.5px);
+    z-index:-1;
+}
+
+/* HEADER */
+header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 30px;
+    background: rgba(255,255,255,0.85);
+}
+header .logo-titulo {
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+header img {
+    height:50px; /* ESCUDO REDUCIDO */
+}
+header .titulo-club {
+    font-family: 'Anton', sans-serif;
+    font-size:1.5rem;
+    color:#0077c2;
+}
+nav ul {
+    list-style:none;
+    display:flex;
+    gap:15px;
+    margin:0;
+    padding:0;
+}
+nav ul li a {
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    transition: color 0.3s;
+}
+nav ul li a:hover { color:#0077c2; }
+
+/* NOTICIAS */
+section h2 { font-size:2rem; text-align:center; margin-bottom:20px; color:#0077c2; }
+.noticias-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+.noticia {
+    background:#e1f5fe;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+    transition: transform 0.3s;
+}
+.noticia:hover { transform: translateY(-5px);}
+.noticia h3 { margin:10px 0; color:#01579b; }
+.noticia p { font-size:0.9rem; color:#555; }
+.noticia a { display:block; margin-top:10px; color:#0288d1; font-weight:bold; text-decoration:none; }
+
+/* PUBLICIDAD */
+.banner-publicidad {
+    width:100%;
+    text-align:center;
+    margin:20px 0;
+}
+.banner-publicidad img {
+    width:60%; /* MÁS PEQUEÑA */
+    border-radius:10px;
+}
+
+/* AGENDA / DISCIPLINAS */
+.agenda-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+.disciplina {
+    background:#f1f8ff;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.disciplina:hover { transform: translateY(-5px);}
+.disciplina h3 { color:#0077c2; margin-bottom:10px; }
+.disciplina .escudos {
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:10px 0;
+}
+.disciplina img { max-width:50px; height:auto; }
+
+/* FOOTER */
+footer {
+    background:#03a9f4;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
+footer a { color:white; text-decoration:none; margin:0 10px; }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header { flex-direction:column; align-items:flex-start; gap:10px;}
+    nav ul { flex-direction:column; gap:10px;}
+}
+</style>
 </head>
 <body>
-    <header>
-        <img src="escudo.jpg" alt="Escudo del Club" class="escudo">
-        <h1>Club Social y Deportivo Winifreda</h1>
-    </header>
 
-    <section id="noticias">
-        <h2>Noticias</h2>
+<header>
+    <div class="logo-titulo">
+        <img src="img/escudo.png" alt="Escudo Winifreda">
+        <div class="titulo-club">Club Social y Deportivo Winifreda</div>
+    </div>
+    <nav>
         <ul>
-            <li><a href="https://www.wini.ar/post/deportivo-winifreda-ya-conoce-su-camino-en-el-torneo-provincial-2025-fixure">Deportivo Winifreda ya conoce su camino en el Torneo Provincial 2025 - FIXTURE</a></li>
-            <li><a href="https://www.wini.ar/post/santino-pieraligi-el-pequeño-talento-de-winifreda-vivio-una-noche-sonada-en-la-cancha-de-lanus">Santino Pieraligi, el pequeño talento de Winifreda, vivió una noche soñada en la cancha de Lanús</a></li>
-            <li><a href="https://www.wini.ar/post/argentinos-juniors-realizara-prueba-de-jugadores-en-winifreda-para-categorias-2006-a-2018">Argentinos Juniors realizará prueba de jugadores en Winifreda para categorías 2006 a 2018</a></li>
-            <li><a href="https://www.wini.ar/post/gran-cena-aniversario-del-csdw-asado-campero-y-baile-con-banda-manatial">Gran Cena Aniversario del CSDW: asado campero y baile con BANDA MANATIAL</a></li>
-            <li><a href="https://www.wini.ar/post/el-deportivo-winifreda-jugara-su-septimo-torneo-provincial-un-nuevo-logro-con-sello-local">El Deportivo Winifreda jugará su séptimo Torneo Provincial: un nuevo logro con sello local</a></li>
-            <li><a href="https://www.wini.ar/post/formar-deportistas-formar-personas-exitoso-taller-de-entrenamiento-mental-para-las-inferiores-del-depo">Formar deportistas, formar personas: exitoso taller de entrenamiento mental para las Inferiores del Depo</a></li>
-            <li><a href="https://www.wini.ar/post/orgullo-girasolero-el-grupo-de-padres-del-depo-equipa-con-ropa-de-viaje-a-todos-los-jugadores-de-las-formativas">Orgullo Girasolero: el grupo de padres del Depo equipa con ropa de viaje a todos los jugadores de las formativas</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#agenda">Deportes</a></li>
+            <li><a href="#noticias">Noticias</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#">Radio</a></li>
         </ul>
-    </section>
+    </nav>
+</header>
 
-    <section id="publicidad">
-        <img src="publicidad.jpg" alt="Publicidad del Club" class="publicidad">
-    </section>
+<section id="noticias">
+<h2>Noticias</h2>
+<div class="noticias-grid">
+    <div class="noticia">
+        <h3>Nuevo Fixture 2025</h3>
+        <p>Confirmado el camino del Depo en 2025.</p>
+        <a href="https://www.deportivowinifreda.com.ar/index.html">Leer más</a>
+    </div>
+    <div class="noticia">
+        <h3>Santino Pieraligi</h3>
+        <p>Noche soñada en la cancha de Lanús.</p>
+        <a href="https://www.deportivowinifreda.com.ar/index.html">Leer más</a>
+    </div>
+    <div class="noticia">
+        <h3>Pruebas de Jugadores</h3>
+        <p>Convocatoria abierta de Argentinos Juniors.</p>
+        <a href="https://www.deportivowinifreda.com.ar/index.html">Leer más</a>
+    </div>
+    <div class="noticia">
+        <h3>Cena Aniversario</h3>
+        <p>Gran asado campero y baile con Manatial.</p>
+        <a href="https://www.deportivowinifreda.com.ar/index.html">Leer más</a>
+    </div>
+    <div class="noticia">
+        <h3>Torneo Provincial</h3>
+        <p>El Depo jugará su 7° Provincial consecutivo.</p>
+        <a href="https://www.deportivowinifreda.com.ar/index.html">Leer más</a>
+    </div>
+</div>
+</section>
 
-    <section id="agenda">
-        <h2>Agenda Deportiva</h2>
-        <ul>
-            <li>FÚTBOL - PRIMERA DIVISIÓN - TORNEO PROVINCIAL ZONA "D" - FECHA 1: Domingo 7 de septiembre - INDEPENDIENTE GRAL.PICO - DEPORTIVO WINIFREDA - Primera División: 20:30 hs - Estadio "Petit de Meurville" - Gral. Pico</li>
-            <li>FÚTBOL - CATEGORÍA SENIORS - TORNEO CLAUSURA 5° Fecha - domingo 31 de agosto - LA MARUJA - DEPORTIVO WINIFREDA - 15:30 hs en Conhello</li>
-            <li>VOLEY - LIGA UNIVERSITARIA TORNEO FEMENINO 10° Fecha - viernes 29 de agosto 2025 - GUARDIA DEL MONTE - DEPORTIVO WINIFREDA - 21:30 hs - Sede: Club Guardia del Monte - Toay</li>
-            <li>VOLEY - LIGA UNIVERSITARIA TORNEO MASCULINO 9° Fecha - jueves 4 de septiembre 2025 - GUARDIA DEL MONTE - DEPORTIVO WINIFREDA - 22:00 hs - Sede: Club Guardia del Monte - Toay</li>
-        </ul>
-    </section>
+<div class="banner-publicidad">
+    <img src="img/publicidad1.jpg" alt="Publicidad del club">
+</div>
 
-    <section id="disciplinas">
-        <h2>Disciplinas</h2>
-        <ul>
-            <li>Fútbol</li>
-            <li>Vóley</li>
-            <li>Futsal</li>
-            <li>Handball</li>
-            <li>Atletismo</li>
-        </ul>
-    </section>
+<section id="agenda">
+<h2>Agenda Deportiva</h2>
+<div class="agenda-grid">
+    <div class="disciplina">
+        <h3>Fútbol - Primera División</h3>
+        <div class="escudos"><img src="img/escudos/futbol/independiente_pico.png"><img src="img/escudo.png"></div>
+        <p>Independiente Pico vs Winifreda</p>
+        <p>Domingo 7/9 - 16:00 hs</p>
+    </div>
+    <div class="disciplina">
+        <h3>Fútbol - Categorías Formativas</h3>
+        <div class="escudos"><img src="img/escudos/futbol/anguilense.png"><img src="img/escudo.png"></div>
+        <p>Anguilense vs Winifreda</p>
+        <p>Sábado 13/9 - 13 y 15 hs</p>
+    </div>
+    <div class="disciplina">
+        <h3>Vóley Masculino</h3>
+        <div class="escudos"><img src="img/escudos/voley/sportivo_toay.png"><img src="img/escudo.png"></div>
+        <p>Sportivo Toay vs Winifreda</p>
+        <p>Jueves 4/9 - 22:00 hs</p>
+    </div>
+    <div class="disciplina">
+        <h3>Vóley Femenino</h3>
+        <div class="escudos"><img src="img/escudos/voley/escudo_voley_mar2024.png"><img src="img/escudo.png"></div>
+        <p>Mar 2024 vs Winifreda</p>
+        <p>Viernes 5/9 - 21:30 hs</p>
+    </div>
+    <div class="disciplina">
+        <h3>Fútbol - Categoría Seniors</h3>
+        <div class="escudos"><img src="img/escudos/senior/la_maruja.png"><img src="img/escudo.png"></div>
+        <p>La Maruja vs Winifreda</p>
+        <p>Domingo 7/9 - 15:30 hs</p>
+    </div>
+</div>
+</section>
 
-    <footer>
-        <p>Contacto: info@deportivowinifreda.com.ar</p>
-        <p>&copy; 2025 Club Social y Deportivo Winifreda. Todos los derechos reservados.</p>
-    </footer>
+<footer id="contacto">
+<p>Contacto: info@deportivowinifreda.com.ar</p>
+<p>&copy; 2025 Club Social y Deportivo Winifreda</p>
+</footer>
+
 </body>
 </html>
